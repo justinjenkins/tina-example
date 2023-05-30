@@ -25,28 +25,45 @@ const schema = defineSchema({
       },
     },
     {
-      label: "Blog Posts",
-      name: "post",
-      path: "content/post",
+      label: "Episodes",
+      name: "episode",
+      path: "content/episode",
       fields: [
         {
           type: "string",
-          label: "Title",
+          label: "title",
           name: "title",
         },
         {
-          type: "string",
-          label: "Blog Post Body",
-          name: "body",
-          isBody: true,
-          ui: {
-            component: "textarea",
-          },
+          type: "datetime",
+          label: "date",
+          name: "date",
         },
+        {
+          type: "rich-text",
+          label: "description",
+          name: "description",
+          isBody: true,
+        },
+        {
+          type: "string",
+          label: "duration",
+          name: "duration",
+        },
+        {
+          type: "string",
+          label: "file url",
+          name: "file_url",
+        },
+        {
+          type: "boolean",
+          label: "published",
+          name: "is_published",
+        }, 
       ],
       ui: {
         router: ({ document }) => {
-          return `/posts/${document._sys.filename}`;
+          return `/epidsodes/${document._sys.filename}`;
         },
       },
     },

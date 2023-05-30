@@ -1,3 +1,4 @@
+import 'bulma/css/bulma.min.css';
 import Link from 'next/link'
 import Head from 'next/head'
 
@@ -9,8 +10,7 @@ export const Layout = (props) => {
       }}
     >
       <Head>
-        <title>Tina App</title>
-        <meta name="description" content="A TinaCMS Application" />
+        <title>The Bible Project Podcast</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
@@ -18,8 +18,8 @@ export const Layout = (props) => {
           <a>Home</a>
         </Link>
         {' | '}
-        <Link href="/posts">
-          <a>Posts</a>
+        <Link href="/episodes">
+          <a>Episodes</a>
         </Link>
       </header>
       <main>{props.children}</main>

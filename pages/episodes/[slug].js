@@ -1,5 +1,6 @@
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 import { Layout } from "../../components/Layout";
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { client } from "../../tina/__generated__/client";
 
 export default function Home(props) {
@@ -10,24 +11,34 @@ export default function Home(props) {
     data: props.data,
   });
 
+  const content = data.episode.description;
+
   return (
     <Layout>
+      <div class="box">
+        <h3 class="title is-3">This is {data.episode.title}</h3>
+        <div data-tina-field={tinaField(data.episode, "description")}>
+        <TinaMarkdown content={content} />
+      </div>
+      </div>
+      {/*
       <code>
         <pre
           style={{
             backgroundColor: "lightgray",
           }}
         >
-          {JSON.stringify(data.post, null, 2)}
+          {JSON.stringify(data.episode, null, 2)}          
         </pre>
       </code>
+      */}
     </Layout>
   );
 }
 
 export const getStaticPaths = async () => {
-  const { data } = await client.queries.postConnection();
-  const paths = data.postConnection.edges.map((x) => {
+  const { data } = await client.queries.episodeConnection();
+  const paths = data.episodeConnection.edges.map((x) => {
     return { params: { slug: x.node._sys.filename } };
   });
 
@@ -38,7 +49,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async (ctx) => {
-  const { data, query, variables } = await client.queries.post({
+  const { data, query, variables } = await client.queries.episode({
     relativePath: ctx.params.slug + ".md",
   });
 
