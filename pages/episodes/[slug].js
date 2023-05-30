@@ -17,21 +17,13 @@ export default function Home(props) {
     <Layout>
       <div class="box">
         <h3 class="title is-3">This is {data.episode.title}</h3>
+        <audio controls>
+          <source src={data.episode.file_url} type="audio/mpeg" />
+        </audio>
         <div data-tina-field={tinaField(data.episode, "description")}>
-        <TinaMarkdown content={content} />
+          <TinaMarkdown content={content} />
+        </div>
       </div>
-      </div>
-      {/*
-      <code>
-        <pre
-          style={{
-            backgroundColor: "lightgray",
-          }}
-        >
-          {JSON.stringify(data.episode, null, 2)}          
-        </pre>
-      </code>
-      */}
     </Layout>
   );
 }

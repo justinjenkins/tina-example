@@ -10,15 +10,16 @@ export default function EpisodeList(props) {
     variables: props.variables,
     data: props.data,
   });
-  const episodesList = data.episodeConnection.edges;
+  const episodesList = data.episodeConnection.edges.filter(episode => episode.node.is_published);
+
   return (
     <Layout>
-      <h1>Episodes</h1>
+      <h1 class="title">Episodes</h1>
       <div>
         {episodesList.map((episode) => (
           <div key={episode.node.id}>
             <Link href={`/episodes/${episode.node._sys.filename}`}>
-              <a>{episode.node._sys.filename}</a>
+              <a>{episode.node.title}</a>
             </Link>
           </div>
         ))}

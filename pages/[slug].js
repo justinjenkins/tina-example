@@ -12,6 +12,7 @@ export default function Home(props) {
   });
 
   const content = data.page.body;
+  
   return (
     <Layout>
       <div data-tina-field={tinaField(data.page, "body")}>
