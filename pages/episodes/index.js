@@ -10,18 +10,26 @@ export default function EpisodeList(props) {
     variables: props.variables,
     data: props.data,
   });
-  const episodesList = data.episodeConnection.edges.filter(episode => episode.node.is_published);
+  const episodesList = data.episodeConnection.edges.filter(
+    (episode) => episode.node.is_published
+  );
 
   return (
     <Layout>
-      <h1 class="title">Episodes</h1>
+      <h1 className="title">Episodes ({episodesList.length})</h1>
       <div>
         {episodesList.map((episode) => (
-          <div key={episode.node.id}>
-            <Link href={`/episodes/${episode.node._sys.filename}`}>
-              <a>{episode.node.title}</a>
-            </Link>
-          </div>
+          <article key={episode.node.id} class="message mb-5 is-info">
+            <div className="message-header">
+              <p>{episode.node.title}</p>
+            </div>
+            <div className="message-body">{episode.node.short_description}</div>
+            <div className="px-4 py-4">
+              <Link href={`/episodes/${episode.node._sys.filename}`}>
+                <button className="button">View More</button>
+              </Link>
+            </div>
+          </article>
         ))}
       </div>
     </Layout>

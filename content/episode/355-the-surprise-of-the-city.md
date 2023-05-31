@@ -5,6 +5,12 @@ duration: '01:06:53'
 file_url: >-
   https://locator.simplecastcdn.com/695767b0-cd40-4e6c-ac8c-ac6bc0df77ee/f15e24b4-1597-428b-8ba0-d602ab91dc44.mp3?aid=rss_feed&feed=3NVmUWZO
 is_published: true
+short_description: >-
+  The theme of the city in the Bible is a surprising one. When cities are
+  introduced in the story, they’re depicted as “bad”—a human response to
+  increasing violence and the need for self-protection—and gardens are depicted
+  as humanity’s ideal setting. However, in the book of Revelation, the new
+  creation Jesus brings is a city. What’s going on here?
 ---
 
 The theme of the city in the Bible is a surprising one. When cities are introduced in the story, they’re depicted as “bad”—a human response to increasing violence and the need for self-protection—and gardens are depicted as humanity’s ideal setting. However, in the book of Revelation, the new creation Jesus brings is a city. What’s going on here? Join Tim and Jon as they start exploring the biblical theme of the city.

@@ -13,22 +13,18 @@ export const Layout = (props) => {
         <title>The Bible Project Podcast</title>
       </Head>
       <header>
-        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <nav className="breadcrumb" aria-label="breadcrumbs">
           <ul>
             <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <Link href="/episodes">
-                <a>Episodes</a>
-              </Link>
+              <Link href="/episodes">Episodes</Link>
             </li>
           </ul>
         </nav>
       </header>
-      <main style={{marginTop: 15}}>{props.children}</main>
+      <main style={{ marginTop: 15 }}>{props.children}</main>
     </div>
   );
 };

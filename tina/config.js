@@ -40,6 +40,14 @@ const schema = defineSchema({
           name: "date",
         },
         {
+          type: "string",
+          label: "short description",
+          name: "short_description",
+          ui: {
+            component: "textarea",
+          },
+        },
+        {
           type: "rich-text",
           label: "description",
           name: "description",
@@ -59,7 +67,7 @@ const schema = defineSchema({
           type: "boolean",
           label: "published",
           name: "is_published",
-        }, 
+        },
       ],
       ui: {
         router: ({ document }) => {

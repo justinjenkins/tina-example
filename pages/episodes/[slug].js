@@ -15,14 +15,24 @@ export default function Home(props) {
 
   return (
     <Layout>
-      <div class="box">
-        <h3 class="title is-3">This is {data.episode.title}</h3>
+      <div className=" block">
+        <h3 className="title is-3">{data.episode.title}</h3>
         <audio controls>
           <source src={data.episode.file_url} type="audio/mpeg" />
         </audio>
-        <div data-tina-field={tinaField(data.episode, "description")}>
-          <TinaMarkdown content={content} />
-        </div>
+        <div className="block"></div>
+        <article className="message is-info">
+          <div className="message-header">
+            <p>Episode Description</p>
+          </div>
+
+          <div
+            className="message-body block content"
+            data-tina-field={tinaField(data.episode, "description")}
+          >
+            <TinaMarkdown content={content} />
+          </div>
+        </article>
       </div>
     </Layout>
   );
